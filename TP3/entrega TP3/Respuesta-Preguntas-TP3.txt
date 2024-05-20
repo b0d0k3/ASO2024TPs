@@ -1,0 +1,35 @@
+1) Ejecución de Tarea SIN Hilos:
+1.1) Tiempo de ejecución: Se puede notar con respecto al tiempo de ejecución que las tareas terminan siempre con microsegundos diferentes, 
+en cada intento sale con diferente tiempo asi siendo el timepo total diferente en cada intento. Pero no difiere en segundos completos sino que en
+microsegundos de diferencia, haciendola casi impredecible. La tarea 1: Termina siempre en 3 segundos pero en diferentes microsegundos 3.764...
+3.802... , etc. La tarea 2: Termina siempre en 1 segundo pero también con microsegundos que difieren entre los intentos como 1.00247, 1.01192, etc.
+Por ultimo la tarea 3: Termina siempre en 4 segundos, sus diferencias en los microsegundos siendo 4.00416, 4.01335, etc. Se repite esto en todos 
+los intentos variando estos microsegundos y asi mismo el tiempo total de completar todas las tareas, haciendo esto casi impredecible.
+1.2) Proceso o función de la vida real: Podria ser la renderización de graficos en tiempo real ya que las operaciones de renderización se ejecutan
+a la máxima velocidad permitida por la GPU. En la vida real podriamos decir que es el transporte de una caja del punto A al punto B que este trabajo
+depende su velocidad de realización del vehiculo que se use y cuantos se usen.
+1.3) Proceso o función de la vida real: Un proceso de velocidad de respuesta no dependiente de la velocidad de procesamiento es el tiempo que 
+se tarda en hacer conexión al servidor de un videojuego, ya que esto depende de los servidores mismo de este. En la vida real podriamos comparar
+esto con la entrada a un lugar, como la entrada al Club que la velocidad en la que logres ingresar al lugar depende del guardia de seguridad que 
+tiene que ver y asegurarse de que entren mayores de edad.
+
+2) Ejecución de Tareas CON Hilos:
+2.1) Tiempo de ejecución: Se puede notar con respecto al tiempo de ejecución que este es mas rápido por la organización de las tareas. Se organiza a las tareas de 
+forma que las tareas que menos tardan en realizarse se las pone en prioridad, haciendo que el tiempo de respuesta sea mas rápido que el timepo
+de respuesta del programa SIN hilos.
+2.2) Completa funciones en orden establecido?: No completan las funciones en el orden establecido sino que se completan según su tiempo en completarse. La 
+tarea 2 al terminar en 1 segundo es la primera en realizarse, la sigue la tarea 1 terminando en 3 segundos y por ultimo la tarea 3 terminando en 4 segundo (todas 
+obviamente) variando sus microsegundos.
+2.3) Escenario real: Un escenario donde el multi-hilado puede hacer una mejoria es para reducir la latencia, ya que al manejarse las multiples solicitudes en 
+simultaneo se reduce el tiempo de espera para que una solicitud sea atendida haciendo que los tiempos de respuesta sean mas rapidos.
+
+3) Ejecución de Sumador-Restador SIN y Con Race:
+3.1) Se puede notar tiempo de ejecución?: No puedo notar nada con respecto al tiempo de ejecución ya que ambos programas se ejecutan con casi la misma velocidad
+3.2) Valor final del acumulador: El valor del acumulador en el programa SIN Race siempre devuelve el resultado 0, pero CON Race devuelve variedad de números.
+3.3) Esto sucede gracias a que se usa el Race Conditions que lo que hace es ayudar al programa a que el valor que se esta acumulando se utilice, en el programa SIN
+Race este valor no se lo utiliza, queda guardado pero no se lo cita / llama.
+3.4) Como se puede corregir?: Haciendo uso de un return según sea necesario y utilizando un nombre diferente para cada global de cada def.
+
+4)Detección y protección del problema:
+4.1) Valor final del acumulador: El valor del acumulador se va guardando y utilizando según sea necesario.
+4.2) Tiempo de ejecución: No puedo notar nada respecto a este tiempo ya que se desarrolla con la misma velocidad que los anteriores.
